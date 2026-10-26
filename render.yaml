@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: multimodal-construction-intelligence
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: MAX_UPLOAD_MB
+        value: "8"
